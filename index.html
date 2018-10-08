@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>good night</title>
+
+	<style type="text/css">
+		/*html {
+            height: 100%;
+           
+        }*/
+		body{
+            position: relative;
+            margin: 0px;
+            background-image: url('sky2.jpg');
+            background-size:100%;
+           /* background-image: linear-gradient(to bottom, #1E0D3F , pink);*/
+            height: 100%;
+            background-repeat: no-repeat;
+            overflow:hidden;
+
+        }
+
+		#circle{
+
+			width: 3px; height: 5px; background: linear-gradient(to bottom, white , yellow);; /*border-radius: 50%;*/
+
+			position: absolute; animation: drop 2s infinite /*alternate*/;
+
+		}
+
+		@keyframes drop{
+
+			from{padding-top: 0; margin-left: 30%;}
+
+			to{margin-top: 300px; margin-left: 0;}
+
+		}
+		/*#box{
+			width: 100%;
+			height: 100%;
+			overflow:hidden;
+		}*/
+		#moon{
+			position: absolute;
+			width: 170px;
+			left: 40px;
+			padding: 30px;
+
+		}
+		#cat{
+			z-index: 1;
+			position: absolute;
+			width: 300px;
+			top: 350px;
+			right: 50px;
+		}
+		#star1{
+			position: absolute;
+			margin-top: 150px;
+			width: 90px;
+			right: 420px;
+		}
+		#star2{
+			position: absolute;
+			margin-top: 300px;
+			width: 120px;
+			right: 650px;
+		}
+		#star3{
+			position: absolute;
+			margin-top: 95px;
+			width: 80px;
+			right: 900px;
+		}
+		#star4{
+			position: absolute;
+			margin-top: 210px;
+			width: 80px;
+			right: 1150px;
+		}
+		#star5{
+			position: absolute;
+			margin-top: 35px;
+			width: 95px;
+			right: 180px;
+		}
+		.change{
+		-webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+    	transition: width 2s, height 2s, transform 2s infinite alternate;
+		}
+		.change:hover{
+			-webkit-transform: rotate(-40deg); /* Safari */
+    		transform: rotate(-40deg); 
+		}
+
+
+	</style>
+
+</head>
+
+<body>
+		<div id="circle"></div>
+		<img class="change" id="moon" src="moon.png">
+		<img id="cat" src="cat1.png">
+		<img class="change" id="star1" src="gemini.png">
+		<img class="change" id="star2" src="cencer.png">
+		<img class="change" id="star3" src="capricorn.png">
+		<img class="change" id="star4" src="libra.png">
+		<img class="change" id="star5" src="taurus.png">
+		<audio id="sleep">
+  		<source src="sleep.mp3" type="audio/mpeg">
+		</audio>
+	
+
+	<script type="text/javascript">
+
+		// var t= circle.cloneNode(true);
+
+		// t.style.background="red";
+
+		// document.body.appendChild(t);
+
+		var total=0;
+
+		for(var i=0;i<10;i++){
+
+			// console.log(i)
+
+			// total=total+(i+1);
+
+			var t=document.getElementById("circle");
+
+			var k= t.cloneNode(true);
+
+			k.style.left=Math.random()*window.innerWidth+"px";
+
+			k.style.top=Math.random()*window.innerHeight+"px";
+
+			var time=Math.random();
+
+			k.style.animationDuration= time+"s";
+
+			// k.style.background="rgb("+Math.random()*255","255","0")";
+
+			k.style.background="makeColor()";
+
+			document.body.appendChild(k);
+
+			// console.log(window.innerWidth, window.innerHeight);
+
+			// 0에서 시작하고 몇번돌리고 더할지
+
+		}
+
+		function makeColor(){
+
+			var a=Math.ceil(Math.random()*255);
+
+			var b=Math.ceil(Math.random()*255);
+
+			var c=Math.ceil(Math.random()*255);
+
+			var text="rgb("+a+","+b+","+c+")";
+
+			conlose.log(text);
+
+			return text;
+
+		}
+		var toggle = "off";
+			cat.onclick=function(){
+				
+				if (toggle == "off") {
+					sleep.play();
+					toggle="on";
+					
+				}else{
+					sleep.pause();
+					toggle="off";
+					
+					}
+				
+			}
+			
+	</script>
+</body>
+
+</html>
